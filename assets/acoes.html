@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ações — TurisCentro do Brasil</title>
+  <title>TurisCentro do Brasil</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles.css" />
+  <!-- CSS (index está na raiz) -->
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
 <body>
@@ -15,168 +15,154 @@
   <header class="nav">
     <div class="container nav-inner">
 
-      <a class="brand" href="../index.html">
-        <img
-          class="site-logo"
-          src="images/logo1.png"
-          alt="Instituto TurisCentro do Brasil"
-        >
-        <span>Instituto TurisCentro do Brasil</span>
+      <!-- Logo volta pro topo do index -->
+      <a class="brand" href="#topo" aria-label="Voltar ao topo">
+        <img class="site-logo" src="assets/images/logo1.png" alt="TurisCentro do Brasil">
+        <span>TurisCentro do Brasil</span>
       </a>
 
-      <nav class="menu">
-        <a href="instituto.html">Instituto</a>
-        <a href="territorio.html">Território</a>
-        <a href="acoes.html">Ações</a>
-        <a href="agenda.html">Agenda</a>
-        <a href="conteudos.html">Conteúdos</a>
-        <a href="participe.html">Participe</a>
+      <!-- Menu abre páginas (mais interativo) -->
+      <nav class="menu" aria-label="Menu principal">
+        <a href="assets/instituto.html">Instituto</a>
+        <a href="assets/territorio.html">Território</a>
+        <a href="assets/acoes.html">Ações</a>
+        <a href="assets/agenda.html">Agenda</a>
+        <a href="assets/conteudos.html">Conteúdos</a>
+        <a href="assets/participe.html">Participe</a>
       </nav>
 
     </div>
   </header>
 
   <!-- MAIN -->
-  <main class="container">
+  <main id="topo" class="container">
 
-    <!-- HERO -->
+    <!-- HERO (texto convidativo, sem repetir "instituto/conteúdos") -->
     <section class="hero">
-      <h1>Ações</h1>
+      <h1>O centro da cidade como protagonista — e você faz parte disso.</h1>
+
       <p>
-        Presença no território, escuta ativa e práticas que conectam pessoas,
-        espaços e histórias do centro urbano.
+        Tem lugar que a gente só atravessa. E tem lugar que merece ser vivido.
+        A ideia aqui é simples: aproximar pessoas do centro, com cuidado, presença
+        e encontros que geram pertencimento. Se você acredita em cidade mais humana,
+        essa proposta é sua também.
       </p>
+
+      <div class="actions">
+        <a class="btn primary" href="assets/participe.html">Quero fazer parte</a>
+        <a class="btn" href="assets/acoes.html">Ver como acontece</a>
+        <a class="btn" href="assets/territorio.html">Entender o território</a>
+      </div>
     </section>
 
-    <!-- CONTEÚDO PRINCIPAL -->
+    <!-- IMAGEM (opcional, mas dá “turismo”) -->
     <section class="section">
-      <p>
-        As ações do Instituto TurisCentro do Brasil acontecem a partir da vivência
-        direta no território. Não partem apenas de planejamento teórico,
-        mas da observação cotidiana da cidade e do diálogo com quem vive,
-        circula e trabalha no centro.
-      </p>
-
-      <p>
-        Caminhadas urbanas, encontros, ações educativas e processos de escuta
-        formam a base do nosso trabalho. Cada ação é entendida como um momento
-        de troca, aprendizado e construção coletiva de conhecimento
-        sobre o espaço urbano.
-      </p>
-
-      <p>
-        Acreditamos que o centro da cidade é um espaço de convivência,
-        e não apenas de passagem. Por isso, nossas ações buscam estimular
-        a permanência consciente, o respeito às diferenças
-        e a leitura crítica da paisagem urbana.
-      </p>
+      <figure class="section-image">
+        <img src="assets/images/imagem1.png" alt="Centro urbano em vivência e presença">
+      </figure>
     </section>
 
-    <!-- ENCONTRE NAS RUAS -->
+    <!-- BLOCO 1 -->
     <section class="section">
-      <h2>Encontre nas Ruas</h2>
+      <div class="grid">
+        <article class="card two-col">
+          <h3>Por que isso importa</h3>
+          <p>
+            Quando o centro é bem vivido, ele melhora para todos: moradores, trabalhadores,
+            visitantes e quem atravessa a cidade todo dia. A mudança começa em gestos reais:
+            olhar com atenção, escutar histórias, entender o espaço e construir convivência.
+          </p>
+        </article>
 
-      <p>
-        O projeto <strong>Encontre nas Ruas</strong> funciona como um mapeamento vivo
-        do centro urbano. Ele reúne informações observadas diretamente no território,
-        como lojas, serviços, edifícios, pontos culturais,
-        usos do espaço público e conexões com o transporte.
-      </p>
-
-      <p>
-        Diferente de guias fixos, o Encontre nas Ruas é dinâmico.
-        Ele se atualiza conforme a cidade muda,
-        respeitando os ritmos, as transformações
-        e as múltiplas camadas que compõem o centro.
-      </p>
-
-      <p>
-        O projeto dialoga com moradores, visitantes,
-        trabalhadores e pesquisadores,
-        criando uma rede de informações baseadas na experiência real
-        e no uso cotidiano da cidade.
-      </p>
+        <article class="card two-col">
+          <h3>O que você encontra aqui</h3>
+          <p>
+            Uma leitura clara do território, ações em campo, registros e materiais
+            que ficam disponíveis para consulta. Tudo pensado para ser direto,
+            útil e evoluir com o tempo — sem “cara de projeto parado”.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <!-- EDUCAÇÃO E MEDIAÇÃO -->
+    <!-- ATALHOS (interativos, levam para páginas) -->
     <section class="section">
-      <h2>Educação e mediação urbana</h2>
+      <div class="grid">
+        <article class="card three-col">
+          <h3>Território</h3>
+          <p>Centro urbano, convivência e patrimônio como experiência viva.</p>
+          <div class="actions">
+            <a class="btn" href="assets/territorio.html">Abrir</a>
+          </div>
+        </article>
 
-      <p>
-        As ações educativas do Instituto têm como base a educação patrimonial,
-        a leitura da cidade e a mediação cultural em campo.
-        Trabalhamos com a ideia de que compreender o território
-        fortalece o cuidado, o pertencimento e a cidadania.
-      </p>
+        <article class="card three-col">
+          <h3>Ações</h3>
+          <p>Caminhadas, vivências, mediação urbana e mapeamentos reais.</p>
+          <div class="actions">
+            <a class="btn" href="assets/acoes.html">Abrir</a>
+          </div>
+        </article>
 
-      <p>
-        A mediação acontece de forma acessível,
-        respeitando diferentes níveis de conhecimento,
-        idades e interesses. O foco não é apenas transmitir informações,
-        mas estimular perguntas, reflexões
-        e novas formas de olhar para o centro.
-      </p>
+        <article class="card three-col">
+          <h3>Agenda</h3>
+          <p>Registros e edições em PDF: o que aconteceu e o que está acontecendo.</p>
+          <div class="actions">
+            <a class="btn" href="assets/agenda.html">Abrir</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- IMAGEM -->
-    <section class="section section-image">
-      <img
-        src="images/capa-acoes.jpg"
-        alt="Ações e caminhadas urbanas no centro da cidade"
-      >
-    </section>
-
-    <!-- CONEXÕES -->
+    <!-- CHAMADA PRINCIPAL (fazer a pessoa pensar “quero participar”) -->
     <section class="section">
-      <p>
-        As ações do TurisCentro dialogam com cultura, turismo,
-        patrimônio, esporte, educação e cidadania.
-        Ao conectar diferentes áreas e atores do território,
-        buscamos fortalecer redes locais
-        e ampliar o acesso à informação sobre o centro urbano.
-      </p>
+      <div class="grid">
+        <article class="card two-col">
+          <h3>Um convite bem direto</h3>
+          <p>
+            Se você quer um centro mais vivo, mais respeitado e mais acessível,
+            sua presença já ajuda. Não precisa “ser especialista”.
+            Basta ter vontade de caminhar junto, contribuir com informação,
+            apoiar ideias e fortalecer o que é coletivo.
+          </p>
+        </article>
 
-      <p>
-        Cada ação é também um convite:
-        caminhar, observar, escutar e participar
-        da construção coletiva da cidade.
-      </p>
+        <article class="card two-col">
+          <h3>Três jeitos de começar</h3>
+          <ul class="list">
+            <li>Participar das ações e encontros no território</li>
+            <li>Compartilhar informações úteis (lugares, rotas, serviços)</li>
+            <li>Conectar parcerias e apoiar a construção do projeto</li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="assets/participe.html">Entrar agora</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- VOLTAR -->
-    <p>
-    <div class="actions">
-      <a class="btn" href="../index.html">← Voltar ao site</a>
-    </div>
-<p>
-    
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (contato e redes em todas as páginas) -->
   <footer class="footer">
-  <div class="container">
-    
-    <p>
-      O Instituto TurisCentro do Brasil mantém canais abertos para diálogo,
-      parcerias e trocas.
-    </p>
+    <div class="container">
 
-    <!-- REDES SOCIAIS -->
-<div class="card two-col">
-  <h3>Redes sociais</h3>
-  <p>
-    <a href="https://www.instagram.com/turiscentrosp" target="_blank" rel="noopener noreferrer">Instagram</a> •
-    <a href="https://www.facebook.com/turiscentro" target="_blank" rel="noopener noreferrer">Facebook</a> •
-    <a href="https://www.linkedin.com/in/turiscentrosp" target="_blank" rel="noopener noreferrer">LinkedIn</a> •
-    <a href="https://www.tiktok.com/@turiscentrosp" target="_blank" rel="noopener noreferrer">TikTok</a>
-  </p>
-</div>
+      <p>
+        Canais abertos para diálogo, parcerias e trocas.
+      </p>
 
+      <div class="social">
+        <a href="https://www.instagram.com/turiscentrosp" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/turiscentro" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.tiktok.com/@turiscentrosp" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="https://www.linkedin.com/in/turiscentrosp" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
 
-    <strong>Instituto TurisCentro do Brasil</strong><br>
+      <strong>TurisCentro do Brasil</strong><br>
       <small>© Todos os direitos reservados.</small>
-  </div>
-</footer>
+
+    </div>
+  </footer>
 
 </body>
 </html>
