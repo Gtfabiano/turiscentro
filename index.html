@@ -3,24 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Instituto — TurisCentro do Brasil</title>
+  <title>TurisCentro do Brasil</title>
 
+  <!-- CSS (index está na raiz) -->
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
 <body>
 
-<header class="nav">
-  <div class="container nav-inner">
+  <!-- HEADER -->
+  <header class="nav">
+    <div class="container nav-inner">
 
-    <div class="brand" href="../index.html">
-      <img
-        class="site-logo"
-        src="images/logo1.png"
-        alt="Instituto TurisCentro do Brasil"
-      >
-      <span>Instituto TurisCentro do Brasil</span>
+      <!-- Logo volta pro topo do index -->
+      <a class="brand" href="#topo" aria-label="Voltar ao topo">
+        <img class="site-logo" src="assets/images/logo1.png" alt="TurisCentro do Brasil">
+        <span>TurisCentro do Brasil</span>
+      </a>
+
+      <!-- Menu abre páginas (mais interativo) -->
+      <nav class="menu" aria-label="Menu principal">
+        <a href="assets/instituto.html">Instituto</a>
+        <a href="assets/territorio.html">Território</a>
+        <a href="assets/acoes.html">Ações</a>
+        <a href="assets/agenda.html">Agenda</a>
+        <a href="assets/conteudos.html">Conteúdos</a>
+        <a href="assets/participe.html">Participe</a>
+      </nav>
+
     </div>
+  </header>
 
     <nav class="menu">
   <a href="assets/instituto.html">Instituto</a>
