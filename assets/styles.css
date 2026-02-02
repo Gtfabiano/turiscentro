@@ -9,32 +9,90 @@
 }
 
 *{box-sizing:border-box}
+
 html,body{margin:0;padding:0}
 html{scroll-behavior:smooth}
 
+/* ===== BODY + FUNDO DESIGN ===== */
 body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:var(--bg);
+  background:
+    radial-gradient(1200px 500px at 15% 10%, rgba(0, 163, 255, .08), transparent 60%),
+    radial-gradient(900px 420px at 85% 15%, rgba(0, 200, 160, .08), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #f4f5f7 100%);
   color:var(--text);
   line-height:1.7;
+  position:relative;
+  overflow-x:hidden;
 }
 
-/* Links */
+/* tracejado sutil verde + acqua */
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  inset:-40px;
+  pointer-events:none;
+  z-index:0;
+  opacity:.35;
+}
+
+body::before{
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(0,180,120,.18) 0 10px,
+      transparent 10px 22px
+    );
+  -webkit-mask:radial-gradient(circle at 20% 20%, #000 0 28%, transparent 55%);
+  mask:radial-gradient(circle at 20% 20%, #000 0 28%, transparent 55%);
+}
+
+body::after{
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,140,255,.16) 0 9px,
+      transparent 9px 21px
+    );
+  -webkit-mask:radial-gradient(circle at 80% 10%, #000 0 24%, transparent 55%);
+  mask:radial-gradient(circle at 80% 10%, #000 0 24%, transparent 55%);
+}
+
+/* garante conteúdo acima do fundo */
+.nav, main, footer{
+  position:relative;
+  z-index:1;
+}
+
+/* ===== LINKS ===== */
 a{color:inherit;text-decoration:none}
 a:hover{text-decoration:none}
 small{color:var(--muted)}
 
-.container{max-width:var(--max);margin:0 auto;padding:0 20px}
-.section{padding:72px 0;border-top:1px solid var(--line)}
+/* ===== LAYOUT ===== */
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 20px;
+}
+
+.section{
+  padding:72px 0;
+  border-top:1px solid var(--line);
+}
 .section:first-of-type{border-top:none}
 
-/* NAV */
+/* ===== NAV ===== */
 .nav{
-  position:sticky;top:0;z-index:10;
+  position:sticky;
+  top:0;
+  z-index:10;
   background:rgba(255,255,255,.92);
-  backdrop-filter: blur(10px);
+  backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
+
 .nav-inner{
   display:flex;
   align-items:center;
@@ -51,13 +109,14 @@ small{color:var(--muted)}
   font-weight:600;
   letter-spacing:.2px;
 }
+
 .site-logo{
   height:42px;
   width:auto;
   display:block;
 }
 
-/* Menu (melhor mobile) */
+/* Menu */
 .menu{
   display:flex;
   gap:14px;
@@ -67,19 +126,30 @@ small{color:var(--muted)}
   -webkit-overflow-scrolling:touch;
   padding-bottom:2px;
 }
+
 .menu a{
   font-size:14px;
   color:var(--muted);
   padding:8px 10px;
   border-radius:999px;
 }
+
 .menu a:hover{
   color:var(--text);
   background:#f5f5f5;
 }
 
-/* HERO */
-.hero{padding:86px 0}
+/* ===== HERO ===== */
+.hero{
+  padding:86px 0;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:var(--radius);
+  padding:26px;
+  backdrop-filter:blur(10px);
+  margin-top:18px;
+}
+
 .hero h1{
   font-size:46px;
   font-weight:520;
@@ -87,12 +157,14 @@ small{color:var(--muted)}
   margin:0 0 14px;
   letter-spacing:-.2px;
 }
+
 .hero p{
   max-width:780px;
   font-size:18px;
   margin:0;
   color:var(--muted);
 }
+
 .actions{
   margin-top:22px;
   display:flex;
@@ -100,7 +172,7 @@ small{color:var(--muted)}
   flex-wrap:wrap;
 }
 
-/* Buttons */
+/* ===== BOTÕES ===== */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -111,27 +183,31 @@ small{color:var(--muted)}
   background:#fff;
   font-size:14px;
 }
+
 .btn.primary{
   background:var(--text);
   color:var(--bg);
   border-color:var(--text);
 }
+
 .btn:hover{opacity:.92}
 
-/* Conteúdo (ritmo) */
+/* ===== CONTEÚDO ===== */
 .section h2{
   margin:0 0 14px;
   font-size:26px;
   letter-spacing:-.1px;
 }
+
 .section p{
   margin:0 0 14px;
   max-width:920px;
   color:var(--muted);
 }
 
-/* “Card” visual para imagens (fica mais turismo) */
+/* ===== IMAGENS ===== */
 .section-image{margin:18px 0 0}
+
 .section-image img{
   width:100%;
   max-height:420px;
@@ -140,50 +216,105 @@ small{color:var(--muted)}
   border:1px solid var(--line);
   display:block;
 }
-.section-image::after{
-  content:"";
-  display:block;
-  height:1px;
-  margin-top:18px;
-  background:transparent;
+
+/* ===== MAPA DO INSTITUTO ===== */
+.mapa.card{
+  margin:22px 0 0;
+  padding:18px;
+  border-radius:var(--radius);
+  border:1px solid rgba(0,0,0,.06);
+  background:rgba(255,255,255,.78);
+  backdrop-filter:blur(10px);
 }
 
-/* Lista PDF */
-.pdf-list{
-  margin:10px 0 0;
-  padding:0;
-  list-style:none;
-  display:grid;
-  gap:10px;
-  max-width:720px;
+.muted{color:rgba(0,0,0,.62)}
+
+/* ===== ÁRVORE ===== */
+.tree{
+  margin-top:12px;
+  border-radius:14px;
+  border:1px dashed rgba(0,140,255,.28);
+  background:rgba(255,255,255,.6);
+  overflow:hidden;
 }
-.pdf-list a{
+
+.tree summary{
+  cursor:pointer;
+  list-style:none;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:10px;
   padding:12px 14px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:var(--card);
-  color:var(--text);
+  font-weight:600;
 }
-.pdf-list a:hover{background:#f2f2f2}
 
-/* Footer */
+.tree summary::-webkit-details-marker{display:none}
+
+.tree-title{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+}
+
+.tree-title::before{
+  content:"";
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:linear-gradient(135deg, rgba(0,140,255,.95), rgba(0,180,120,.95));
+  box-shadow:0 0 0 4px rgba(0,0,0,.04);
+}
+
+.tree-hint{
+  font-size:12px;
+  font-weight:500;
+  color:rgba(0,0,0,.55);
+}
+
+.tree ul{
+  margin:0;
+  padding:10px 16px 16px 34px;
+}
+
+.tree li{
+  margin:8px 0;
+  position:relative;
+}
+
+.tree li::before{
+  content:"";
+  position:absolute;
+  left:-18px;
+  top:12px;
+  width:12px;
+  border-top:1px dashed rgba(0,0,0,.25);
+}
+
+.tree a{
+  border-bottom:1px solid transparent;
+}
+
+.tree a:hover{
+  border-bottom-color:rgba(0,140,255,.35);
+}
+
+/* ===== FOOTER ===== */
 .footer{
   padding:44px 0;
   border-top:1px solid var(--line);
   color:var(--muted);
   font-size:14px;
 }
+
 .footer strong{color:var(--text)}
+
 .social{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
   margin:12px 0 14px;
 }
+
 .social a{
   padding:8px 12px;
   border:1px solid var(--line);
@@ -191,11 +322,15 @@ small{color:var(--muted)}
   background:#fff;
   color:var(--muted);
 }
-.social a:hover{color:var(--text);background:#f5f5f5}
 
-/* Mobile */
+.social a:hover{
+  color:var(--text);
+  background:#f5f5f5;
+}
+
+/* ===== MOBILE ===== */
 @media (max-width:640px){
-  .hero{padding:70px 0}
+  .hero{padding:22px}
   .hero h1{font-size:34px}
   .site-logo{height:38px}
 }
