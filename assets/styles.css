@@ -107,39 +107,6 @@ small{color:var(--muted)}
   border-bottom:1px solid var(--line);
 }
 
-/* ===== FOOTER ===== */
-.footer{
-  padding:44px 0;
-  border-top:1px solid var(--line);
-  color:var(--muted);
-  font-size:14px;
-  background:var(--bg);
-}
-
-.footer strong{
-  color:var(--text);
-}
-
-.social{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin:12px 0 14px;
-}
-
-.social a{
-  padding:8px 12px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  background:#fff;
-  color:var(--muted);
-}
-
-.social a:hover{
-  color:var(--text);
-  background:#f2f2f2;
-}
-
 /* ==================================================
    HIERARQUIA TIPOGRÁFICA UNIFICADA
    ================================================== */
@@ -204,6 +171,50 @@ p{
   opacity:.95;
 }
 
+/* ==================================================
+   FOOTER (ATUALIZADO: pequeno + redes sociais maiores)
+   ================================================== */
+
+.footer{
+  border-top:1px solid var(--line);
+  padding:48px 0;
+  margin-top:64px;
+  background:var(--bg);
+}
+
+/* tudo do footer padronizado pequeno */
+.footer p,
+.footer small{
+  font-size:0.75rem; /* pequeno */
+  line-height:1.6;
+  color:var(--muted);
+}
+
+/* frase institucional em negrito */
+.footer-highlight{
+  font-weight:600;
+  margin-bottom:16px;
+  color:var(--text);
+}
+
+/* redes sociais (um pouco maior, sem botão, em negrito) */
+.footer-social p{
+  font-size:0.85rem;
+  font-weight:600;
+  margin:12px 0 24px;
+  color:var(--text);
+}
+
+.footer-social a{
+  font-weight:600;
+  text-decoration:none;
+  color:var(--text);
+}
+
+.footer-social a:hover{
+  text-decoration:underline;
+}
+
 /* ===== MOBILE ===== */
 @media (max-width:640px){
   h1{
@@ -231,6 +242,3 @@ p{
     height:38px;
   }
 }
-
-
-
