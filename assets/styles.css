@@ -172,7 +172,7 @@ p{
 }
 
 /* ==================================================
-   FOOTER (ATUALIZADO: pequeno + redes sociais maiores)
+   FOOTER (PADRÃO ÚNICO DE TAMANHO)
    ================================================== */
 
 .footer{
@@ -180,35 +180,35 @@ p{
   padding:48px 0;
   margin-top:64px;
   background:var(--bg);
-}
-
-/* tudo do footer padronizado pequeno */
-.footer p,
-.footer small{
-  font-size:0.75rem; /* pequeno */
-  line-height:1.6;
   color:var(--muted);
 }
 
-/* frase institucional em negrito */
+/* todo texto do footer no MESMO tamanho */
+.footer p,
+.footer small{
+  font-size:14px;     /* tamanho único */
+  line-height:1.6;
+  margin:0 0 10px;
+  color:var(--muted);
+}
+
+/* frase institucional em negrito, sem mudar fonte */
 .footer-highlight{
-  font-weight:600;
-  margin-bottom:16px;
+  font-weight:600;    /* negrito */
   color:var(--text);
 }
 
-/* redes sociais (um pouco maior, sem botão, em negrito) */
+/* mídias sociais: mesma fonte, só em negrito */
 .footer-social p{
-  font-size:0.85rem;
-  font-weight:600;
-  margin:12px 0 24px;
+  font-weight:600;    /* negrito */
   color:var(--text);
 }
 
+/* links como texto (sem botão) */
 .footer-social a{
   font-weight:600;
+  color:inherit;
   text-decoration:none;
-  color:var(--text);
 }
 
 .footer-social a:hover{
