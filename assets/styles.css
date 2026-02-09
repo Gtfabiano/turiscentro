@@ -35,7 +35,10 @@ small{ color:var(--muted); }
   padding:0 20px;
 }
 
-/* ===== NAV ===== */
+/* ==================================================
+   NAV
+   ================================================== */
+
 .nav{
   position:sticky;
   top:0;
@@ -85,7 +88,10 @@ small{ color:var(--muted); }
   background:#ededed;
 }
 
-/* ===== Tipografia (hierarquia suave) ===== */
+/* ==================================================
+   TIPOGRAFIA (hierarquia suave)
+   ================================================== */
+
 h1{
   font-size:40px;
   font-weight:650;
@@ -96,7 +102,7 @@ h1{
 }
 
 h2, h3{
-  font-size:16px;        /* propositalmente próximo do corpo */
+  font-size:16px;
   font-weight:700;
   line-height:1.4;
   margin:0 0 8px;
@@ -112,7 +118,10 @@ p{
   color:var(--muted);
 }
 
-/* ===== HERO CLARO (foto em card) ===== */
+/* ==================================================
+   HERO HOME (claro, foto lateral)
+   ================================================== */
+
 .hero.hero-light{
   background: var(--bg);
   padding: 56px 0;
@@ -140,6 +149,7 @@ p{
 .hero-copy .micro{ margin-top:12px; font-size:15px; }
 
 /* Botões */
+
 .hero-cta{
   display:flex;
   gap:12px;
@@ -157,7 +167,7 @@ p{
   border:1px solid var(--line);
   background:#fff;
   color:var(--brand);
-  transition:transform .12s ease, background .12s ease, border-color .12s ease;
+  transition:all .15s ease;
 }
 
 .btn:hover{
@@ -181,7 +191,8 @@ p{
   background:#fff;
 }
 
-/* Foto "solta" em card */
+/* Foto lateral */
+
 .hero-media{
   margin:0;
   background:#fff;
@@ -205,7 +216,84 @@ p{
   border-top:1px solid var(--line);
 }
 
-/* ===== CARDS (atalhos) ===== */
+/* ==================================================
+   MINI HERO – PÁGINAS INTERNAS
+   ================================================== */
+
+.page-hero{
+  background:#fff;
+  padding:42px 0 32px;
+  border-bottom:1px solid var(--line);
+}
+
+.page-hero-inner{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.page-hero .kicker{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--brand);
+  opacity:.7;
+}
+
+.page-hero h1{
+  font-size:28px;
+  font-weight:700;
+  margin:0;
+  color:var(--brand);
+}
+
+.page-hero p{
+  font-size:15px;
+  margin:4px 0 0;
+  color:var(--muted);
+  max-width:680px;
+}
+
+/* versão com imagem lateral */
+
+.page-hero.split{
+  padding:48px 0;
+}
+
+.page-hero.split .page-hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:24px;
+  align-items:center;
+}
+
+.page-hero-media{
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:0 10px 28px rgba(0,0,0,.06);
+}
+
+.page-hero-media img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+.page-hero-media figcaption{
+  font-size:12px;
+  padding:8px 10px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  background:#fff;
+}
+
+/* ==================================================
+   CARDS
+   ================================================== */
+
 .quick{ padding:48px 0; }
 
 .section-title{
@@ -227,7 +315,7 @@ p{
   border-radius:var(--radius);
   padding:16px;
   box-shadow:0 8px 24px rgba(0,0,0,.05);
-  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  transition:all .15s ease;
 }
 
 .card:hover{
@@ -243,7 +331,10 @@ p{
   max-width:none;
 }
 
-/* ===== FOOTER ===== */
+/* ==================================================
+   FOOTER
+   ================================================== */
+
 .footer{
   border-top:1px solid var(--line);
   padding:48px 0;
@@ -274,11 +365,15 @@ p{
   text-decoration:underline;
 }
 
-/* ===== RESPONSIVO ===== */
+/* ==================================================
+   RESPONSIVO
+   ================================================== */
+
 @media (max-width:900px){
   .hero-split{ grid-template-columns:1fr; }
   .hero-media img{ height:280px; }
   .grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .page-hero.split .page-hero-grid{ grid-template-columns:1fr; }
 }
 
 @media (max-width:640px){
@@ -287,4 +382,3 @@ p{
   p{ font-size:15px; }
   .grid{ grid-template-columns:1fr; }
 }
-
