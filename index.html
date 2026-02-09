@@ -9,28 +9,180 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    /* Ajustes específicos só do index (minimalismo) */
-    .intro{
-      min-height: calc(100vh - 160px);
+    /* ===== INDEX: HERO + CARDS (visual moderno) ===== */
+    :root{
+      --brand:#2b1d1a;     /* marrom escuro (base) */
+      --accent:#f29a2e;    /* laranja (detalhe/pin) */
+      --bg:#ffffff;
+      --text:#111111;
+      --muted:#5a5a5a;
+      --line:#e9e9e9;
+      --card:#fafafa;
+      --radius:18px;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      color:#fff;
+      padding:84px 0;
+      background:
+        linear-gradient(0deg, rgba(43,29,26,.78), rgba(43,29,26,.58)),
+        url("assets/images/hero.jpg");
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero-inner{
       display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:24px;
+      min-height:52vh;
+    }
+
+    .hero-copy{
+      max-width:720px;
+    }
+
+    .hero h1{
+      margin:0 0 14px;
+      font-size:44px;
+      line-height:1.08;
+      letter-spacing:-0.02em;
+    }
+
+    .hero .sub{
+      margin:0 0 18px;
+      font-size:18px;
+      color:rgba(255,255,255,.92);
+      max-width:56ch;
+    }
+
+    .hero-cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:18px 0 10px;
+    }
+
+    .hero .micro{
+      margin:10px 0 0;
+      font-size:14px;
+      color:rgba(255,255,255,.82);
+    }
+
+    .btn{
+      display:inline-flex;
       align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:999px;
+      font-weight:700;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      transition:transform .12s ease, background .12s ease, border-color .12s ease;
+      text-decoration:none;
     }
 
-    .intro-text{
-      max-width:820px;
+    .btn:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.12);
+      border-color:rgba(255,255,255,.34);
     }
 
-    .intro-text p{
-      font-size:22px;
-      line-height:1.5;
+    .btn.primary{
+      background:var(--accent);
+      border-color:var(--accent);
+      color:#1b120f;
+    }
+
+    .btn.primary:hover{
+      background:#ffb04a;
+      border-color:#ffb04a;
+    }
+
+    .btn.ghost{
+      background:rgba(255,255,255,.06);
+    }
+
+    .hero-credit{
       margin:0;
-      color:#111;
+      align-self:flex-end;
     }
 
-    @media (max-width:640px){
-      .intro-text p{
-        font-size:18px;
-      }
+    .hero-credit figcaption{
+      font-size:12px;
+      color:rgba(255,255,255,.78);
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.14);
+      padding:8px 10px;
+      border-radius:999px;
+    }
+
+    /* QUICK / CARDS */
+    .quick{
+      padding:56px 0;
+      background:var(--bg);
+    }
+
+    .section-title{
+      margin:0 0 18px;
+      font-size:18px;
+      color:var(--brand);
+      letter-spacing:.01em;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:14px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:16px;
+      text-decoration:none;
+      color:inherit;
+      box-shadow:0 8px 24px rgba(0,0,0,.05);
+      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(242,154,46,.5);
+      box-shadow:0 12px 28px rgba(0,0,0,.08);
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      color:var(--brand);
+      font-size:16px;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    /* Responsivo */
+    @media (max-width: 900px){
+      .hero-inner{ min-height:46vh; }
+      .hero h1{ font-size:36px; }
+      .grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 640px){
+      .hero{ padding:64px 0; }
+      .hero-inner{ align-items:flex-start; }
+      .hero h1{ font-size:30px; }
+      .grid{ grid-template-columns:1fr; }
+      .hero-credit figcaption{ border-radius:14px; }
     }
   </style>
 </head>
@@ -58,42 +210,97 @@
     </div>
   </header>
 
-  <!-- CONTEÚDO PRINCIPAL (CONVITE LARANJA) -->
-  <section class="convite">
+  <!-- HERO (com foto + overlay) -->
+  <section class="hero" aria-label="Apresentação do TurisCentro">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>Venha caminhar com o TurisCentro</h1>
+
+        <p class="sub">
+          Uma proposta aberta para quem acredita em convivência,
+          cuidado e presença no espaço urbano.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn primary" href="assets/participe.html">Somar ações</a>
+          <a class="btn ghost" href="assets/instituto.html">Conhecer o Instituto</a>
+        </div>
+
+        <p class="micro">
+          Cultura, território e histórias vivas — com um olhar de quem pisa a rua.
+        </p>
+      </div>
+
+      <figure class="hero-credit" aria-label="Crédito da imagem de fundo">
+        <figcaption>
+          Imagem: <span id="hero-credit">Rogério Cassimiro — Ministério do Turismo (MTur)</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ATALHOS (cards) -->
+  <section class="quick" aria-label="Acessos rápidos">
     <div class="container">
-      <h1>Venha caminhar com o TurisCentro</h1>
+      <h2 class="section-title">Por onde começar</h2>
 
-      <p class="sub">
-        Uma proposta aberta para quem acredita em convivência,
-        cuidado e presença no espaço urbano.
-      </p>
+      <div class="grid">
+        <a class="card" href="assets/instituto.html">
+          <h3>Instituto</h3>
+          <p>Quem somos e o que defendemos.</p>
+        </a>
 
-      <p class="final">
-        Se isso fizer sentido para você, vamos somar ações.
-      </p>
+        <a class="card" href="assets/territorio.html">
+          <h3>Território</h3>
+          <p>Mapas afetivos, recortes e percursos.</p>
+        </a>
+
+        <a class="card" href="assets/acoes.html">
+          <h3>Ações</h3>
+          <p>Projetos, frentes e iniciativas.</p>
+        </a>
+
+        <a class="card" href="assets/agenda.html">
+          <h3>Agenda</h3>
+          <p>Encontros, caminhadas e programação.</p>
+        </a>
+
+        <a class="card" href="assets/conteudos.html">
+          <h3>Conteúdos</h3>
+          <p>Textos, registros e materiais.</p>
+        </a>
+
+        <a class="card" href="assets/participe.html">
+          <h3>Participe</h3>
+          <p>Chegue junto e construa com a gente.</p>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-  <div class="container">
+    <div class="container">
 
-    <p class="footer-highlight">
-      O Instituto TurisCentro do Brasil mantém canais abertos para diálogo,
-      parcerias e trocas.
-    </p>
-
-    <div class="footer-social">
-      <p>
-        <a href="https://www.instagram.com/turiscentrosp" target="_blank" rel="noopener noreferrer">Instagram</a> •
-        <a href="https://www.facebook.com/turiscentro" target="_blank" rel="noopener noreferrer">Facebook</a> •
-        <a href="https://www.linkedin.com/in/turiscentrosp" target="_blank" rel="noopener noreferrer">LinkedIn</a> •
-        <a href="https://www.tiktok.com/@turiscentrosp" target="_blank" rel="noopener noreferrer">TikTok</a>
+      <p class="footer-highlight">
+        O Instituto TurisCentro do Brasil mantém canais abertos para diálogo,
+        parcerias e trocas.
       </p>
+
+      <div class="footer-social">
+        <p>
+          <a href="https://www.instagram.com/turiscentrosp" target="_blank" rel="noopener noreferrer">Instagram</a> •
+          <a href="https://www.facebook.com/turiscentro" target="_blank" rel="noopener noreferrer">Facebook</a> •
+          <a href="https://www.linkedin.com/in/turiscentrosp" target="_blank" rel="noopener noreferrer">LinkedIn</a> •
+          <a href="https://www.tiktok.com/@turiscentrosp" target="_blank" rel="noopener noreferrer">TikTok</a>
+        </p>
+      </div>
+
+      <small>Instituto TurisCentro do Brasil</small><br>
+      <small>© Todos os direitos reservados.</small>
+
     </div>
+  </footer>
 
-    <small>Instituto TurisCentro do Brasil</small><br>
-    <small>© Todos os direitos reservados.</small>
-
-  </div>
-</footer>
+</body>
+</html>
