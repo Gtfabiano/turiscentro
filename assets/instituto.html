@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Instituto — TurisCentro do Brasil</title>
 
+  <!-- Fontes (2 fontes apenas) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Ajustes locais (só desta página) para dar respiro -->
@@ -13,22 +18,22 @@
       padding: 26px 0 10px;
     }
 
-    .section{
+    /* usa .section global, mas aqui deixa mais “leitura” */
+    main.content .section{
       padding: 22px 0;
       border-bottom: 1px solid var(--line);
     }
 
-    .section:last-of-type{
+    main.content .section:last-of-type{
       border-bottom: none;
       padding-bottom: 6px;
     }
 
-    .section h2{
+    main.content .section h2{
       margin-bottom: 10px;
     }
 
-    /* deixa os blocos com "cara" de leitura */
-    .section p{
+    main.content .section p{
       max-width: 880px;
     }
   </style>
@@ -39,10 +44,10 @@
 <header class="nav">
   <div class="container nav-inner">
 
-    <div class="brand">
+    <!-- Logo clicável (volta para a home) -->
+    <a class="brand brand-logo" href="../index.html#topo" aria-label="Voltar para a página inicial">
       <img class="site-logo" src="images/logo1.png" alt="Instituto TurisCentro do Brasil">
-      <a href="../index.html#topo">Instituto TurisCentro do Brasil</a>
-    </div>
+    </a>
 
     <nav class="menu" aria-label="Menu principal">
       <a href="instituto.html" aria-current="page">Instituto</a>
@@ -61,7 +66,7 @@
   <div class="container page-hero-grid">
 
     <div>
-      <span class="kicker">Institucional</span>
+      <p class="kicker">Institucional</p>
       <h1>Instituto</h1>
       <p>
         O Instituto TurisCentro do Brasil atua na valorização dos centros urbanos
@@ -222,8 +227,8 @@
       </p>
     </div>
 
-    <small>Instituto TurisCentro do Brasil</small><br>
-    <small>© Todos os direitos reservados.</small>
+    <small class="footer-meta">Instituto TurisCentro do Brasil</small><br>
+    <small class="footer-meta">© Todos os direitos reservados.</small>
 
   </div>
 </footer>
