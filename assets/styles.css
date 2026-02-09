@@ -1,20 +1,24 @@
 :root{
-  --brand:#2b1d1a;     /* marrom escuro (logo/base) */
+  --brand:#2b1d1a;     /* marrom (logo/base) */
   --accent:#f29a2e;    /* laranja (detalhe/pin) */
 
   --bg:#ffffff;
   --text:#111111;
-  --muted:#555555;
-  --line:#e6e6e6;
+  --muted:#4b4b4b;     /* cinza mais “presente” */
+  --line:#e7e7e7;
   --card:#fafafa;
 
   --max:1100px;
   --radius:18px;
 
-  --nav-bg:#f5f6f7;
+  --nav-bg:#f6f6f6;
+
+  /* Tipografia: 2 tamanhos “mundo todo” */
+  --fs-title:40px;     /* título */
+  --fs-body:16px;      /* texto */
 }
 
-*{box-sizing:border-box}
+*{ box-sizing:border-box; }
 
 html,body{ margin:0; padding:0; }
 html{ scroll-behavior:smooth; }
@@ -27,7 +31,7 @@ body{
 }
 
 a{ color:inherit; text-decoration:none; }
-small{ color:var(--muted); }
+a:hover{ text-decoration:none; }
 
 .container{
   max-width:var(--max);
@@ -51,25 +55,23 @@ small{ color:var(--muted); }
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:14px 0;
+  padding:12px 0;
   gap:16px;
 }
 
-.brand{
+/* Só o logo (clicável) */
+.brand-logo{
   display:flex;
   align-items:center;
-  gap:12px;
-  font-weight:600;
-  letter-spacing:.2px;
 }
 
-/* logo maior */
 .site-logo{
-  height:54px;
+  height:52px; /* maior, como você pediu */
   width:auto;
   display:block;
 }
 
+/* Menu */
 .menu{
   display:flex;
   gap:14px;
@@ -82,6 +84,8 @@ small{ color:var(--muted); }
   color:var(--muted);
   padding:8px 10px;
   border-radius:999px;
+  font-family:"Open Sans", sans-serif;
+  font-weight:600; /* pouco negrito */
 }
 
 .menu a:hover{
@@ -89,48 +93,55 @@ small{ color:var(--muted); }
   background:#ededed;
 }
 
+.menu a[aria-current="page"]{
+  color:var(--text);
+  background:#eaeaea;
+}
+
 /* ==================================================
-   TIPOGRAFIA (hierarquia suave)
+   TIPOGRAFIA (apenas 2 “famílias”)
    ================================================== */
 
-h1, h2, h3{
-  font-family:"Nunito","Open Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+h1,h2,h3{
+  font-family:"Nunito", system-ui, sans-serif;
+  color:var(--brand);
+  letter-spacing:-0.01em;
+  margin:0;
 }
 
 h1{
-  font-size:40px;
-  font-weight:750; /* Nunito fica melhor assim */
+  font-size:var(--fs-title);
+  font-weight:800;
   line-height:1.12;
-  letter-spacing:-0.02em;
   margin:0 0 10px;
-  color:var(--brand);
 }
 
 h2, h3{
-  font-size:16px;
-  font-weight:800;
+  font-size:16px;      /* próximo do corpo (mesma “família”) */
+  font-weight:700;
   line-height:1.4;
   margin:0 0 8px;
-  color:var(--brand);
 }
 
-p{
-  font-size:16px;
-  font-weight:400;
-  line-height:1.65;
-  margin:0 0 12px;
-  max-width:920px;
+p, li, small{
+  font-size:var(--fs-body);
   color:var(--muted);
+  margin:0 0 12px;
+}
+
+.section{
+  padding:40px 0;
+  border-top:1px solid var(--line);
 }
 
 /* ==================================================
-   HERO HOME (claro, foto lateral)
+   HERO HOME (claro, foto em card)
    ================================================== */
 
 .hero.hero-light{
-  background: var(--bg);
-  padding: 56px 0;
-  border-bottom: 1px solid var(--line);
+  background:var(--bg);
+  padding:56px 0;
+  border-bottom:1px solid var(--line);
 }
 
 .hero-split{
@@ -142,19 +153,17 @@ p{
 
 .kicker{
   margin:0 0 10px;
-  font-size:13px;
-  font-weight:800;
+  font-size:12px;
+  font-weight:700;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--brand);
-  opacity:.75;
+  color:var(--muted);
 }
 
 .hero-copy .sub{ margin:0 0 14px; }
 .hero-copy .micro{ margin-top:12px; font-size:15px; }
 
 /* Botões */
-
 .hero-cta{
   display:flex;
   gap:12px;
@@ -168,10 +177,11 @@ p{
   justify-content:center;
   padding:12px 16px;
   border-radius:999px;
-  font-weight:800;
+  font-family:"Open Sans", sans-serif;
+  font-weight:700;
   border:1px solid var(--line);
   background:#fff;
-  color:var(--brand);
+  color:var(--text);
   transition:all .15s ease;
 }
 
@@ -182,8 +192,8 @@ p{
 }
 
 .btn.primary{
-  background: var(--accent);
-  border-color: var(--accent);
+  background:var(--accent);
+  border-color:var(--accent);
   color:#1b120f;
 }
 
@@ -192,12 +202,7 @@ p{
   border-color:#ffb04a;
 }
 
-.btn.ghost{
-  background:#fff;
-}
-
-/* Foto lateral */
-
+/* Foto em card */
 .hero-media{
   margin:0;
   background:#fff;
@@ -222,7 +227,7 @@ p{
 }
 
 /* ==================================================
-   MINI HERO – PÁGINAS INTERNAS
+   MINI HERO (páginas internas)
    ================================================== */
 
 .page-hero{
@@ -239,11 +244,9 @@ p{
 
 .page-hero .kicker{
   font-size:12px;
-  font-weight:800;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--brand);
-  opacity:.7;
+  color:var(--muted);
 }
 
 .page-hero h1{
@@ -256,44 +259,7 @@ p{
 .page-hero p{
   font-size:15px;
   margin:4px 0 0;
-  color:var(--muted);
   max-width:680px;
-}
-
-/* versão com imagem lateral */
-
-.page-hero.split{
-  padding:48px 0;
-}
-
-.page-hero.split .page-hero-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:24px;
-  align-items:center;
-}
-
-.page-hero-media{
-  border-radius:var(--radius);
-  overflow:hidden;
-  border:1px solid var(--line);
-  box-shadow:0 10px 28px rgba(0,0,0,.06);
-}
-
-.page-hero-media img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  object-position:center 20%;
-  display:block;
-}
-
-.page-hero-media figcaption{
-  font-size:12px;
-  padding:8px 10px;
-  border-top:1px solid var(--line);
-  color:var(--muted);
-  background:#fff;
 }
 
 /* ==================================================
@@ -307,6 +273,7 @@ p{
   font-size:16px;
   font-weight:800;
   color:var(--brand);
+  font-family:"Nunito", sans-serif;
 }
 
 .grid{
@@ -333,17 +300,17 @@ p{
 .card p{
   margin:0;
   font-size:15px;
-  line-height:1.45;
+  line-height:1.55;
   max-width:none;
 }
 
 /* ==================================================
-   FOOTER (cinza escuro + preto, mesma fonte)
+   FOOTER (cinza + preto, mesma fonte/tamanho)
    ================================================== */
 
 .footer{
   border-top:1px solid var(--line);
-  padding:48px 0;
+  padding:44px 0;
   margin-top:56px;
   background:var(--bg);
 }
@@ -353,27 +320,25 @@ p{
   font-size:14px;
   line-height:1.6;
   margin:0 0 10px;
-  color:#333; /* cinza escuro */
+  font-family:"Open Sans", sans-serif;
 }
 
 .footer-highlight{
   font-weight:700;
-  color:#111; /* preto */
+  color:var(--text); /* preto */
 }
 
 .footer-social p{
-  font-weight:700;
-  color:#111; /* preto */
-}
-
-.footer-social a{
-  color:#333;
-  font-weight:700;
+  font-weight:600;
+  color:var(--muted); /* cinza escuro */
 }
 
 .footer-social a:hover{
-  color:#111;
   text-decoration:underline;
+}
+
+.footer-meta{
+  color:var(--muted);
 }
 
 /* ==================================================
@@ -384,12 +349,10 @@ p{
   .hero-split{ grid-template-columns:1fr; }
   .hero-media img{ height:280px; }
   .grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
-  .page-hero.split .page-hero-grid{ grid-template-columns:1fr; }
 }
 
 @media (max-width:640px){
-  .site-logo{ height:44px; } /* logo maior no desktop, confortável no mobile */
-  h1{ font-size:32px; }
-  p{ font-size:15px; }
+  :root{ --fs-title:32px; --fs-body:15px; }
+  .site-logo{ height:46px; }
   .grid{ grid-template-columns:1fr; }
 }
