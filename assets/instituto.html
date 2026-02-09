@@ -6,9 +6,35 @@
   <title>Instituto — TurisCentro do Brasil</title>
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Ajustes locais (só desta página) para dar respiro -->
+  <style>
+    main.content{
+      padding: 26px 0 10px;
+    }
+
+    .section{
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:last-of-type{
+      border-bottom: none;
+      padding-bottom: 6px;
+    }
+
+    .section h2{
+      margin-bottom: 10px;
+    }
+
+    /* deixa os blocos com "cara" de leitura */
+    .section p{
+      max-width: 880px;
+    }
+  </style>
 </head>
 
-<body>
+<body id="topo">
 
 <header class="nav">
   <div class="container nav-inner">
@@ -30,22 +56,30 @@
   </div>
 </header>
 
-<main class="container">
+<!-- MINI HERO (com foto lateral) -->
+<section class="page-hero split" aria-label="Apresentação do Instituto">
+  <div class="container page-hero-grid">
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Instituto</h1>
-
-    <p>
-      O Instituto TurisCentro do Brasil atua na valorização dos centros urbanos
-      a partir da escuta, da presença e da construção de ações possíveis,
-      conectando pessoas, histórias e territórios.
-    </p>
-
-    <div class="actions">
-      <a class="btn" href="../index.html#topo">← Voltar ao site</a>
+    <div>
+      <span class="kicker">Institucional</span>
+      <h1>Instituto</h1>
+      <p>
+        O Instituto TurisCentro do Brasil atua na valorização dos centros urbanos
+        a partir da escuta, da presença e da construção de ações possíveis,
+        conectando pessoas, histórias e territórios.
+      </p>
     </div>
-  </section>
+
+    <figure class="page-hero-media">
+      <!-- Troque o arquivo se quiser: hero2.jpg / hero3.jpg -->
+      <img src="images/hero2.jpg" alt="Centro de São Paulo visto do Viaduto do Chá">
+      <figcaption>Imagem: Fabiano Santos</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<main class="container content">
 
   <!-- QUEM SOMOS -->
   <section class="section" id="quem-somos">
@@ -174,7 +208,7 @@
 <footer class="footer">
   <div class="container">
 
-    <p class="footer-text footer-highlight">
+    <p class="footer-highlight">
       O Instituto TurisCentro do Brasil mantém canais abertos para diálogo,
       parcerias e trocas.
     </p>
@@ -196,3 +230,4 @@
 
 </body>
 </html>
+
