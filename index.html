@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Instituto TurisCentro do Brasil</title>
 
+  <!-- Fontes (2 fontes apenas) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
   <!-- CSS -->
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
@@ -15,9 +20,10 @@
   <header class="nav">
     <div class="container nav-inner">
 
-     <a class="brand brand-link" href="#topo" aria-label="Voltar ao topo">
-  <img class="site-logo" src="assets/images/logo1.png" alt="Instituto TurisCentro do Brasil">
-</a>
+      <!-- LOGO clicável (volta para a home) -->
+      <a class="brand brand-logo" href="index.html#topo" aria-label="Voltar para a página inicial">
+        <img class="site-logo" src="assets/images/logo1.png" alt="Instituto TurisCentro do Brasil">
+      </a>
 
       <nav class="menu" aria-label="Menu principal">
         <a href="assets/instituto.html">Instituto</a>
@@ -31,7 +37,7 @@
     </div>
   </header>
 
-  <!-- HERO CLARO (fundo branco + foto em card ao lado) -->
+  <!-- HERO (claro, imagem em card) -->
   <section class="hero hero-light" aria-label="Apresentação do TurisCentro">
     <div class="container hero-split">
 
@@ -47,7 +53,7 @@
 
         <div class="hero-cta">
           <a class="btn primary" href="assets/participe.html">Somar ações</a>
-          <a class="btn ghost" href="assets/instituto.html">Conhecer o Instituto</a>
+          <a class="btn" href="assets/instituto.html">Conhecer o Instituto</a>
         </div>
 
         <p class="micro">
@@ -56,14 +62,17 @@
       </div>
 
       <figure class="hero-media">
-        <img src="assets/images/hero.jpg" alt="Praça da Sé, São Paulo">
-        <figcaption>Imagem: Rogério Cassimiro — Ministério do Turismo (MTur)</figcaption>
+        <!-- troque o arquivo quando quiser -->
+        <img src="assets/images/hero.jpg" alt="Vista urbana em São Paulo">
+        <figcaption>
+          Imagem: Rogério Cassimiro — Ministério do Turismo (MTur)
+        </figcaption>
       </figure>
 
     </div>
   </section>
 
-  <!-- ATALHOS (cards) -->
+  <!-- CARDS -->
   <section class="quick" aria-label="Acessos rápidos">
     <div class="container">
       <h2 class="section-title">Por onde começar</h2>
@@ -120,8 +129,8 @@
         </p>
       </div>
 
-      <small>Instituto TurisCentro do Brasil</small><br>
-      <small>© Todos os direitos reservados.</small>
+      <small class="footer-meta">Instituto TurisCentro do Brasil</small><br>
+      <small class="footer-meta">© Todos os direitos reservados.</small>
 
     </div>
   </footer>
