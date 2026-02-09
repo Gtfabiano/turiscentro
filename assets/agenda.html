@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Agenda — TurisCentro do Brasil</title>
 
-  <!-- Fontes (somente 2) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,7 +17,6 @@
 <header class="nav">
   <div class="container nav-inner">
 
-    <!-- Logo clicável -->
     <a class="brand brand-logo" href="../index.html#topo" aria-label="Voltar para a página inicial">
       <img class="site-logo" src="images/logo1.png" alt="Instituto TurisCentro do Brasil">
     </a>
@@ -28,48 +26,48 @@
       <a href="territorio.html">Território</a>
       <a href="acoes.html">Ações</a>
       <a href="agenda.html" aria-current="page">Agenda</a>
-      <a href="conteudos.html">Conteúdos</a>
       <a href="participe.html">Participe</a>
     </nav>
 
   </div>
 </header>
 
-<main class="container">
+<!-- HERO (com foto) -->
+<section class="page-hero split" aria-label="Agenda Acontece no Centro">
+  <div class="container page-hero-grid">
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Agenda — Acontece no Centro</h1>
+    <div>
+      <h1>Agenda — Acontece no Centro</h1>
+      <p>
+        Jornal do território: registra acontecimentos, encontros e movimentações do centro.
+        Cada edição é organizada, editada e disponibilizada em PDF para leitura e memória.
+      </p>
+    </div>
+
+    <figure class="page-hero-media" style="max-width:360px;">
+      <img src="images/hero5.jpg" alt="Cena urbana no centro de São Paulo" style="width:100%;height:auto;">
+      <figcaption>Crédito: Divulgação</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<main class="container content">
+
+  <section class="section" id="como-funciona">
+    <h2>Como funciona</h2>
     <p>
-      A Agenda do TurisCentro funciona como um jornal do território:
-      registra acontecimentos, ações, encontros e movimentações do centro urbano.
-      Após edição, cada material fica disponível em PDF para consulta e memória.
+      A Agenda não é só lista de datas. Ela organiza contexto: o que aconteceu,
+      por que importou e quais sinais ficam no território. A proposta é simples:
+      transformar movimento em registro útil — e manter isso acessível depois.
     </p>
   </section>
 
-  <!-- TEXTO PRINCIPAL -->
-  <section class="section">
-    <p>
-      Mais do que divulgar datas, a Agenda busca contextualizar o que acontece
-      no centro da cidade. Cada registro é pensado para permanecer acessível,
-      mesmo após o encerramento de um evento ou ação, contribuindo para a
-      documentação contínua da vida urbana.
-    </p>
-
-    <p>
-      Os conteúdos podem incluir ações culturais, ativações temporárias,
-      caminhadas urbanas, encontros, iniciativas locais e notícias relevantes
-      do território. A organização é feita por edições, em formato de jornal,
-      permitindo leitura rápida e consulta posterior.
-    </p>
-  </section>
-
-  <!-- EDIÇÕES EM PDF -->
-  <section class="section">
+  <section class="section" id="edicoes-pdf">
     <h2>Edições em PDF</h2>
     <p>
       Aqui ficam as edições finalizadas do <strong>Acontece no Centro</strong>.
-      Conforme novas edições forem publicadas, basta adicionar o PDF nesta lista.
+      Para publicar uma nova edição, basta adicionar o PDF na lista.
     </p>
 
     <ul class="pdf-list">
@@ -81,21 +79,33 @@
     </ul>
   </section>
 
-  <!-- REGISTROS -->
-  <section class="section">
-    <h2>Registros do território</h2>
+  <section class="section" id="notas-rapidas">
+    <h2>Notas e registros rápidos</h2>
     <p>
-      Além das edições em PDF, a Agenda também pode reunir notas curtas
-      e registros de campo — como observações, mudanças percebidas no território,
-      atualizações de equipamentos culturais, movimentações urbanas e iniciativas
-      em andamento.
+      Além do PDF, a Agenda reúne notas curtas de campo: mudanças percebidas,
+      atualizações de equipamentos culturais, ativações temporárias,
+      ajustes de circulação, iniciativas locais e informações práticas.
     </p>
 
-    <p>
-      A proposta é manter uma memória ativa do centro: o que muda, o que permanece,
-      o que surge e o que merece atenção. Esse conjunto de registros fortalece
-      a leitura coletiva da cidade e apoia futuras ações do Instituto.
-    </p>
+    <div class="grid">
+      <article class="card two-col">
+        <h3>O que entra aqui</h3>
+        <ul class="list">
+          <li>Atualizações de programação e horários</li>
+          <li>Novas iniciativas e ativações no território</li>
+          <li>Mudanças no espaço público (obras, acessos, circulação)</li>
+          <li>Informações úteis para quem vive, trabalha e visita</li>
+        </ul>
+      </article>
+
+      <article class="card two-col">
+        <h3>Para que serve</h3>
+        <p>
+          Para leitura rápida, consulta posterior e construção de memória ativa.
+          O centro muda o tempo todo — aqui a informação acompanha, com registro e contexto.
+        </p>
+      </article>
+    </div>
   </section>
 
 </main>
@@ -125,4 +135,3 @@
 
 </body>
 </html>
-
