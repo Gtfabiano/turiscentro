@@ -14,7 +14,7 @@
   --nav-bg:#f6f6f6;
 
   /* Tipografia: 2 tamanhos “mundo todo” */
-  --fs-title:40px;     /* título */
+  --fs-title:40px;     /* título (home) */
   --fs-body:16px;      /* texto */
 }
 
@@ -148,7 +148,7 @@ ul{
 li{ margin:0 0 8px; }
 
 /* ==================================================
-   HERO (padrão claro) — HOME e internas (recomendado)
+   HERO HOME (claro, imagem em card)
    ================================================== */
 
 .hero.hero-light{
@@ -164,7 +164,7 @@ li{ margin:0 0 8px; }
   align-items:center;
 }
 
-/* opcional, se usar */
+/* opcional */
 .kicker{
   margin:0 0 10px;
   font-size:12px;
@@ -240,36 +240,67 @@ li{ margin:0 0 8px; }
   color:var(--muted);
   padding:10px 12px;
   border-top:1px solid var(--line);
-  background:#fff; /* neutro */
+  background:#fff;
 }
 
 /* ==================================================
-   MINI HERO (alternativa simples p/ internas)
-   (se você NÃO quiser usar o hero-light)
+   MINI HERO — PÁGINAS INTERNAS (SPLIT)
+   padrão igual à home (card + caption)
    ================================================== */
 
-.page-hero{
-  background:#fff;
-  padding:42px 0 32px;
+.page-hero.split{
+  padding:48px 0;
   border-bottom:1px solid var(--line);
+  background:#fff;
 }
 
-.page-hero-inner{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+/* grid da seção interna */
+.page-hero-grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap:22px;
+  align-items:center;
 }
 
+/* Título interno mais discreto */
 .page-hero h1{
-  font-size:28px;
+  font-size:30px;      /* discreto, mas maior que o texto */
   font-weight:800;
-  margin:0;
+  line-height:1.15;
+  margin:0 0 10px;
 }
 
+/* texto do mini hero */
 .page-hero p{
   font-size:15px;
-  margin:4px 0 0;
+  margin:0 0 12px;
   max-width:680px;
+}
+
+/* Card da imagem interna (igual home) */
+.page-hero-media{
+  margin:0;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 10px 28px rgba(0,0,0,.06);
+}
+
+.page-hero-media img{
+  width:100%;
+  height:340px; /* mesma altura da home */
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+
+.page-hero-media figcaption{
+  font-size:12px;
+  color:var(--muted);
+  padding:10px 12px;
+  border-top:1px solid var(--line);
+  background:#fff;
 }
 
 /* ==================================================
@@ -315,7 +346,7 @@ li{ margin:0 0 8px; }
 }
 
 /* ==================================================
-   LISTAS de PDF (para Conteúdos/Agenda etc.)
+   LISTAS de PDF (Conteúdos/Agenda etc.)
    ================================================== */
 
 .pdf-list{
@@ -342,7 +373,7 @@ li{ margin:0 0 8px; }
 }
 
 /* ==================================================
-   IMAGENS EM SEÇÃO (quando usar)
+   IMAGENS EM SEÇÃO
    ================================================== */
 
 .section-image{
@@ -358,7 +389,7 @@ li{ margin:0 0 8px; }
 }
 
 /* ==================================================
-   FOOTER (cinza + preto, mesma fonte/tamanho)
+   FOOTER
    ================================================== */
 
 .footer{
@@ -378,12 +409,12 @@ li{ margin:0 0 8px; }
 
 .footer-highlight{
   font-weight:700;
-  color:var(--text); /* preto */
+  color:var(--text);
 }
 
 .footer-social p{
   font-weight:600;
-  color:var(--muted); /* cinza escuro */
+  color:var(--muted);
 }
 
 .footer-social a:hover{
@@ -402,10 +433,15 @@ li{ margin:0 0 8px; }
   .hero-split{ grid-template-columns:1fr; }
   .hero-media img{ height:280px; }
   .grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+
+  .page-hero-grid{ grid-template-columns:1fr; }
+  .page-hero-media img{ height:280px; }
 }
 
 @media (max-width:640px){
   :root{ --fs-title:32px; --fs-body:15px; }
   .site-logo{ height:46px; }
   .grid{ grid-template-columns:1fr; }
+
+  .page-hero h1{ font-size:26px; }
 }
