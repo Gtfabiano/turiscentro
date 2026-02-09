@@ -1,23 +1,29 @@
 :root{
-  --brand:#2b1d1a;     /* marrom (logo/base) */
-  --accent:#f29a2e;    /* laranja (detalhe/pin) */
+  --brand:#2b1d1a;
+  --accent:#f29a2e;
 
   --bg:#ffffff;
   --text:#111111;
-  --muted:#4b4b4b;     /* cinza mais “presente” */
+  --muted:#4b4b4b;
   --line:#e7e7e7;
   --card:#fafafa;
 
   --max:1100px;
   --radius:18px;
 
-  --nav-bg:#f6f6f6;
+  /* NAV */
+  --nav-bg:#e3ded8;
+  --nav-text:#360929;
+  --nav-hover:#f1ece6;
+  --nav-pill:#360929;
 
-  /* Tipografia base */
-  --fs-title:40px;     /* título (HOME) */
-  --fs-body:16px;      /* texto */
-  --fs-title-page:32px;/* título (PÁGINAS) */
-  --fs-h2:18px;        /* subtítulos */
+  --fs-title:40px;
+  --fs-body:16px;
+  --fs-title-page:32px;
+  --fs-h2:18px;
+
+  --fs-nav:17px;
+  --fs-nav-mobile:16px;
 }
 
 *{ box-sizing:border-box; }
@@ -33,8 +39,6 @@ body{
 }
 
 a{ color:inherit; text-decoration:none; }
-a:hover{ text-decoration:none; }
-
 img{ max-width:100%; height:auto; display:block; }
 
 .container{
@@ -52,59 +56,81 @@ img{ max-width:100%; height:auto; display:block; }
   top:0;
   z-index:10;
   background:var(--nav-bg);
-  border-bottom:1px solid var(--line);
+  border-bottom:1px solid rgba(54, 9, 41, 0.18);
 }
 
 .nav-inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:12px 0;
-  gap:16px;
+  padding:18px 0;
+  gap:18px;
 }
 
-/* Só o logo (clicável) */
 .brand-logo{
   display:flex;
   align-items:center;
 }
 
 .site-logo{
-  height:52px;
+  height:62px;
   width:auto;
-  display:block;
 }
 
-/* Menu */
 .menu{
   display:flex;
-  gap:14px;
+  gap:18px;
   overflow-x:auto;
   white-space:nowrap;
   -webkit-overflow-scrolling:touch;
+  padding:6px 0;
 }
 
 .menu a{
-  font-size:14px;
-  color:var(--muted);
-  padding:8px 10px;
+  font-size:var(--fs-nav);
+  color:var(--nav-text);
+  padding:10px 14px;
   border-radius:999px;
   font-family:"Open Sans", sans-serif;
-  font-weight:600;
+  font-weight:700;
+  letter-spacing:.3px;
+  transition:background .15s ease, transform .15s ease;
 }
 
 .menu a:hover{
-  color:var(--text);
-  background:#ededed;
+  background:var(--nav-hover);
+  transform:translateY(-1px);
 }
 
+/* Página ativa */
 .menu a[aria-current="page"]{
-  color:var(--text);
-  background:#eaeaea;
+  background:var(--nav-pill);
+  color:#fff;
+}
+
+/* ===== CTA (Participe) ===== */
+.menu a.cta{
+  background:var(--nav-pill);
+  color:#fff;
+  padding:10px 18px;
+  font-weight:800;
+  letter-spacing:.4px;
+  box-shadow:0 10px 22px rgba(54, 9, 41, 0.18);
+}
+
+.menu a.cta:hover{
+  background:#2a0620;
+  transform:translateY(-1px);
+}
+
+/* Quando CTA for a página atual */
+.menu a.cta[aria-current="page"]{
+  outline:2px solid rgba(255,255,255,.6);
+  outline-offset:2px;
 }
 
 /* ==================================================
-   TIPOGRAFIA (apenas 2 fontes)
+   TIPOGRAFIA
    ================================================== */
 
 h1,h2,h3{
@@ -114,7 +140,6 @@ h1,h2,h3{
   margin:0;
 }
 
-/* H1 padrão (HOME) */
 h1{
   font-size:var(--fs-title);
   font-weight:800;
@@ -122,7 +147,6 @@ h1{
   margin:0 0 10px;
 }
 
-/* H1 das páginas internas (Instituto/Território/etc.) */
 .page-hero h1{
   font-size:var(--fs-title-page);
   font-weight:800;
@@ -130,7 +154,6 @@ h1{
   margin:0 0 14px;
 }
 
-/* H2 padrão: maior que corpo e com respiro */
 h2{
   font-size:var(--fs-h2);
   font-weight:700;
@@ -154,7 +177,7 @@ p, li, small{
 strong{ color:var(--text); }
 
 /* ==================================================
-   SEÇÕES (respiro + padrão)
+   SEÇÕES
    ================================================== */
 
 .section{
@@ -162,45 +185,25 @@ strong{ color:var(--text); }
   border-top:1px solid var(--line);
 }
 
-/* listas padrão */
-ul{
-  margin:0;
-  padding-left:18px;
-}
-
+ul{ margin:0; padding-left:18px; }
 li{ margin:0 0 8px; }
 
 /* ==================================================
-   HERO HOME (claro, imagem em card)
+   HERO
    ================================================== */
 
 .hero.hero-light{
-  background:var(--bg);
   padding:56px 0;
   border-bottom:1px solid var(--line);
 }
 
 .hero-split{
   display:grid;
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns:1.05fr .95fr;
   gap:22px;
   align-items:center;
 }
 
-/* opcional */
-.kicker{
-  margin:0 0 10px;
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-
-.hero-copy .sub{ margin:0 0 14px; }
-.hero-copy .micro{ margin-top:12px; font-size:15px; }
-
-/* Botões */
 .hero-cta,
 .actions{
   display:flex;
@@ -215,18 +218,14 @@ li{ margin:0 0 8px; }
   justify-content:center;
   padding:12px 16px;
   border-radius:999px;
-  font-family:"Open Sans", sans-serif;
   font-weight:700;
   border:1px solid var(--line);
   background:#fff;
-  color:var(--text);
-  transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  transition:.15s ease;
 }
 
 .btn:hover{
   transform:translateY(-1px);
-  border-color: rgba(0,0,0,.12);
-  background:#fafafa;
 }
 
 .btn.primary{
@@ -235,15 +234,7 @@ li{ margin:0 0 8px; }
   color:#1b120f;
 }
 
-.btn.primary:hover{
-  background:#ffb04a;
-  border-color:#ffb04a;
-}
-
-/* Foto em card (HOME) */
 .hero-media{
-  margin:0;
-  background:#fff;
   border:1px solid var(--line);
   border-radius:var(--radius);
   overflow:hidden;
@@ -254,8 +245,6 @@ li{ margin:0 0 8px; }
   width:100%;
   height:340px;
   object-fit:cover;
-  object-position:center;
-  display:block;
 }
 
 .hero-media figcaption{
@@ -263,179 +252,6 @@ li{ margin:0 0 8px; }
   color:var(--muted);
   padding:10px 12px;
   border-top:1px solid var(--line);
-  background:#fff;
-}
-
-/* ==================================================
-   MINI HERO — PÁGINAS INTERNAS (SPLIT)
-   (imagem em card + caption igual home)
-   ================================================== */
-
-.page-hero.split{
-  padding:48px 0;
-  border-bottom:1px solid var(--line);
-  background:#fff;
-}
-
-.page-hero-grid{
-  display:grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap:22px;
-  align-items:center;
-}
-
-.page-hero p{
-  font-size:15px;
-  margin:0 0 12px;
-  max-width:680px;
-}
-
-/* Card da imagem interna */
-.page-hero-media{
-  margin:0;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:0 10px 28px rgba(0,0,0,.06);
-}
-
-.page-hero-media img{
-  width:100%;
-  height:340px;
-  object-fit:cover;
-  object-position:center;
-  display:block;
-}
-
-.page-hero-media figcaption{
-  font-size:12px;
-  color:var(--muted);
-  padding:10px 12px;
-  border-top:1px solid var(--line);
-  background:#fff;
-}
-
-/* ==================================================
-   CARDS
-   ================================================== */
-
-.quick{ padding:48px 0; }
-
-.section-title{
-  margin:0 0 18px;
-  font-size:16px;
-  font-weight:800;
-  color:var(--brand);
-  font-family:"Nunito", sans-serif;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:14px;
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:16px;
-  box-shadow:0 8px 24px rgba(0,0,0,.05);
-  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-}
-
-.card:hover{
-  transform:translateY(-2px);
-  border-color:rgba(242,154,46,.45);
-  box-shadow:0 12px 28px rgba(0,0,0,.08);
-}
-
-.card p{
-  margin:0;
-  font-size:15px;
-  line-height:1.55;
-  max-width:none;
-}
-
-/* ==================================================
-   LISTAS de PDF (Conteúdos/Agenda)
-   ================================================== */
-
-.pdf-list{
-  list-style:none;
-  padding-left:0;
-  margin:0;
-}
-
-.pdf-list li{
-  padding:10px 12px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:#fff;
-  margin:0 0 10px;
-}
-
-.pdf-list a{
-  color:var(--text);
-  font-weight:600;
-}
-
-.pdf-list a:hover{
-  text-decoration:underline;
-}
-
-/* ==================================================
-   IMAGENS EM SEÇÃO
-   ================================================== */
-
-.section-image{
-  padding:0;
-  border-top:none;
-}
-
-.section-image img{
-  width:100%;
-  border-radius:var(--radius);
-  border:1px solid var(--line);
-  box-shadow:0 10px 28px rgba(0,0,0,.06);
-}
-
-/* ==================================================
-   FOOTER
-   ================================================== */
-
-.footer{
-  border-top:1px solid var(--line);
-  padding:44px 0;
-  margin-top:56px;
-  background:var(--bg);
-}
-
-.footer p,
-.footer small{
-  font-size:14px;
-  line-height:1.6;
-  margin:0 0 10px;
-  font-family:"Open Sans", sans-serif;
-}
-
-.footer-highlight{
-  font-weight:700;
-  color:var(--text);
-}
-
-.footer-social p{
-  font-weight:600;
-  color:var(--muted);
-}
-
-.footer-social a:hover{
-  text-decoration:underline;
-}
-
-.footer-meta{
-  color:var(--muted);
 }
 
 /* ==================================================
@@ -445,16 +261,19 @@ li{ margin:0 0 8px; }
 @media (max-width:900px){
   .hero-split{ grid-template-columns:1fr; }
   .hero-media img{ height:280px; }
-  .grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
-
-  .page-hero-grid{ grid-template-columns:1fr; }
-  .page-hero-media img{ height:280px; }
+  .site-logo{ height:54px; }
+  .menu a{ font-size:var(--fs-nav-mobile); padding:9px 12px; }
 }
 
 @media (max-width:640px){
-  :root{ --fs-title:32px; --fs-body:15px; }
-  .site-logo{ height:46px; }
-  .grid{ grid-template-columns:1fr; }
+  :root{
+    --fs-title:32px;
+    --fs-body:15px;
+    --fs-title-page:26px;
+    --fs-h2:17px;
+  }
 
-  :root{ --fs-title-page:26px; --fs-h2:17px; }
+  .site-logo{ height:50px; }
+  .menu{ gap:12px; }
+  .menu a{ font-size:15px; padding:9px 12px; }
 }
