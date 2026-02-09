@@ -3,123 +3,110 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Instituto — TurisCentro do Brasil</title>
+  <title>Conteúdos — TurisCentro do Brasil</title>
+
+  <!-- Fontes oficiais do site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body id="topo">
 
 <header class="nav">
   <div class="container nav-inner">
 
-    <!-- sem link (como você quer) -->
-    <div class="brand">
-  <img class="site-logo" src="images/logo1.png" alt="Instituto TurisCentro do Brasil">
-  <a href="../index.html#topo">Instituto TurisCentro do Brasil</a>
-</div>
+    <!-- Logo clicável -->
+    <a class="brand brand-logo" href="../index.html#topo" aria-label="Voltar para a página inicial">
+      <img class="site-logo" src="images/logo1.png" alt="Instituto TurisCentro do Brasil">
+    </a>
 
     <nav class="menu" aria-label="Menu principal">
-      <a href="instituto.html" aria-current="page">Instituto</a>
+      <a href="instituto.html">Instituto</a>
       <a href="territorio.html">Território</a>
       <a href="acoes.html">Ações</a>
       <a href="agenda.html">Agenda</a>
-      <a href="conteudos.html">Conteúdos</a>
+      <a href="conteudos.html" aria-current="page">Conteúdos</a>
       <a href="participe.html">Participe</a>
     </nav>
 
   </div>
 </header>
 
-  <!-- MAIN -->
-  <main class="container">
+<main class="container">
 
-    <!-- HERO -->
-    <section class="hero">
-      <h1>Conteúdos</h1>
-      <p>
-        Materiais para aprofundar a leitura do centro urbano:
-        artigos, relatos de campo, mapas, leituras comentadas,
-        registros visuais e materiais educativos.
-      </p>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Conteúdos</h1>
+    <p>
+      Materiais para aprofundar a leitura do centro urbano:
+      artigos, relatos de campo, mapas, leituras comentadas,
+      registros visuais e materiais educativos.
+    </p>
+  </section>
 
-    <!-- TEXTO PRINCIPAL -->
-    <section class="section">
-      <p>
-        A área de Conteúdos do Instituto TurisCentro do Brasil reúne materiais
-        produzidos ao longo das ações do Instituto e de processos contínuos de
-        observação da cidade. O objetivo é ampliar repertórios, organizar informações
-        e tornar acessível a leitura do território central a partir de diferentes
-        formatos e perspectivas.
-      </p>
+  <!-- TEXTO PRINCIPAL -->
+  <section class="section">
+    <p>
+      A área de Conteúdos do Instituto TurisCentro do Brasil reúne materiais
+      produzidos ao longo das ações do Instituto e de processos contínuos de
+      observação da cidade. O objetivo é ampliar repertórios, organizar informações
+      e tornar acessível a leitura do território central a partir de diferentes
+      formatos e perspectivas.
+    </p>
 
-      <p>
-        Os conteúdos dialogam com temas como território, patrimônio, convivência,
-        turismo urbano, cultura e cidadania, sempre a partir da experiência direta
-        e do cotidiano do centro. Esta biblioteca é construída de forma contínua
-        e aberta, acompanhando as transformações do território.
-      </p>
-    </section>
+    <p>
+      Os conteúdos dialogam com temas como território, patrimônio, convivência,
+      turismo urbano, cultura e cidadania, sempre a partir da experiência direta
+      e do cotidiano do centro. Esta biblioteca é construída de forma contínua
+      e aberta, acompanhando as transformações do território.
+    </p>
+  </section>
 
-    <!-- BLOCOS DE CONTEÚDO (DESCRIÇÃO) -->
-    <section class="section">
-      <h2>O que você encontra aqui</h2>
+  <!-- LINHAS DE CONTEÚDO -->
+  <section class="section">
+    <h2>O que você encontra aqui</h2>
 
-      <p>
-        Para manter “menos é mais”, organizamos os conteúdos em linhas principais:
-        textos de leitura rápida, registros de campo e materiais em PDF.
-        Quando necessário, cada material pode ser atualizado, substituído ou ampliado
-        sem mudar a estrutura do site.
-      </p>
+    <p>
+      Para manter “menos é mais”, organizamos os conteúdos em linhas principais:
+      textos de leitura rápida, registros de campo e materiais em PDF.
+      Quando necessário, cada material pode ser atualizado, substituído ou ampliado
+      sem mudar a estrutura do site.
+    </p>
 
-      <ul class="pdf-list">
-        <li>
-          <a href="#" onclick="return false;">
-            Artigos e textos curtos (em atualização)
-          </a>
-        </li>
-        <li>
-          <a href="#" onclick="return false;">
-            Relatos de campo e observações do território (em atualização)
-          </a>
-        </li>
-        <li>
-          <a href="#" onclick="return false;">
-            Mapas, leituras e materiais educativos (em atualização)
-          </a>
-        </li>
-      </ul>
-    </section>
+    <ul class="pdf-list">
+      <li>Artigos e textos curtos (em atualização)</li>
+      <li>Relatos de campo e observações do território (em atualização)</li>
+      <li>Mapas, leituras e materiais educativos (em atualização)</li>
+    </ul>
+  </section>
 
-    <!-- PDFs -->
-    <section class="section">
-      <h2>PDFs disponíveis</h2>
-      <p>
-        Aqui ficam os materiais finalizados em PDF. Conforme novos conteúdos forem
-        publicados, basta adicionar novos links nesta lista.
-      </p>
+  <!-- PDFs -->
+  <section class="section">
+    <h2>PDFs disponíveis</h2>
 
-      <ul class="pdf-list">
-        <li>
-          <a href="../assets/pdf/conteudos/caderno-territorio.pdf" target="_blank" rel="noopener noreferrer">
-            Caderno Território — Leitura e observação urbana (PDF)
-          </a>
-        </li>
-      </ul>
-    </section>
+    <p>
+      Aqui ficam os materiais finalizados em PDF. Conforme novos conteúdos forem
+      publicados, basta adicionar novos links nesta lista.
+    </p>
 
-    <!-- VOLTAR -->
-    <div class="actions">
-      <a class="btn" href="../index.html">← Voltar ao site</a>
-    </div>
+    <ul class="pdf-list">
+      <li>
+        <a href="pdf/conteudos/caderno-territorio.pdf" target="_blank" rel="noopener noreferrer">
+          Caderno Território — Leitura e observação urbana (PDF)
+        </a>
+      </li>
+    </ul>
+  </section>
 
-  </main>
+</main>
 
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
 
-    <p class="footer-text footer-highlight">
+    <p class="footer-highlight">
       O Instituto TurisCentro do Brasil mantém canais abertos para diálogo,
       parcerias e trocas.
     </p>
@@ -133,8 +120,8 @@
       </p>
     </div>
 
-    <small>Instituto TurisCentro do Brasil</small><br>
-    <small>© Todos os direitos reservados.</small>
+    <small class="footer-meta">Instituto TurisCentro do Brasil</small><br>
+    <small class="footer-meta">© Todos os direitos reservados.</small>
 
   </div>
 </footer>
