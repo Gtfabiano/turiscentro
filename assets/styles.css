@@ -250,9 +250,10 @@ li{ margin:0 0 8px; }
   box-shadow:0 10px 28px rgba(0,0,0,.06);
 }
 
+/* ✅ HOME maior */
 .hero-media img{
   width:100%;
-  height:340px;
+  height:420px;
   object-fit:cover;
   object-position:center;
   display:block;
@@ -268,7 +269,6 @@ li{ margin:0 0 8px; }
 
 /* ==================================================
    MINI HERO — PÁGINAS INTERNAS (SPLIT)
-   (imagem em card + caption igual home)
    ================================================== */
 
 .page-hero.split{
@@ -300,9 +300,10 @@ li{ margin:0 0 8px; }
   box-shadow:0 10px 28px rgba(0,0,0,.06);
 }
 
+/* ✅ Internas menor */
 .page-hero-media img{
   width:100%;
-  height:340px;
+  height:260px;
   object-fit:cover;
   object-position:center;
   display:block;
@@ -444,11 +445,16 @@ li{ margin:0 0 8px; }
 
 @media (max-width:900px){
   .hero-split{ grid-template-columns:1fr; }
-  .hero-media img{ height:280px; }
+
+  /* HOME menor no mobile */
+  .hero-media img{ height:320px; }
+
   .grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
 
   .page-hero-grid{ grid-template-columns:1fr; }
-  .page-hero-media img{ height:280px; }
+
+  /* Internas menor no mobile */
+  .page-hero-media img{ height:220px; }
 }
 
 @media (max-width:640px){
@@ -458,3 +464,4 @@ li{ margin:0 0 8px; }
 
   :root{ --fs-title-page:26px; --fs-h2:17px; }
 }
+
