@@ -1,9 +1,13 @@
 :root{
+  --brand:#2b1d1a;     /* marrom escuro (base) */
+  --accent:#f29a2e;    /* laranja (detalhe/pin) */
+
   --bg:#ffffff;
   --text:#111111;
   --muted:#555555;
   --line:#e6e6e6;
   --card:#fafafa;
+
   --max:1100px;
   --radius:18px;
 
@@ -101,12 +105,6 @@ small{color:var(--muted)}
   background:#ededed;
 }
 
-/* ===== HERO (quando existir em páginas internas) ===== */
-.hero{
-  padding:96px 0 86px;
-  border-bottom:1px solid var(--line);
-}
-
 /* ==================================================
    HIERARQUIA TIPOGRÁFICA UNIFICADA
    ================================================== */
@@ -141,34 +139,163 @@ p{
 }
 
 /* ==================================================
-   CONVITE TURISCENTRO (SOMENTE HOME)
+   HERO + CARDS (HOME)
    ================================================== */
 
-.home .convite{
-  background:#e85d04; /* laranja acolhedor */
-  color:#ffffff;
-  padding:96px 0;
-  border-bottom:1px solid rgba(0,0,0,.08);
+/* HERO */
+.hero{
+  position:relative;
+  color:#fff;
+  padding:84px 0;
+  background:
+    linear-gradient(0deg, rgba(43,29,26,.78), rgba(43,29,26,.58)),
+    url("assets/images/hero.jpg");
+  background-size:cover;
+  background-position:center;
 }
 
-.home .convite h1{
-  margin:0 0 16px;
-  color:#ffffff;
+.hero-inner{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:24px;
+  min-height:52vh;
 }
 
-.home .convite .sub{
-  max-width:820px;
-  margin:0 0 22px;
-  font-size:20px;
-  line-height:1.6;
-  color:#ffffff;
+.hero-copy{
+  max-width:720px;
 }
 
-.home .convite .final{
+/* só no hero: não herdar o p global */
+.hero p{
+  color:rgba(255,255,255,.92);
+  max-width:56ch;
+}
+
+.hero h1{
+  margin:0 0 14px;
+  font-size:44px;
+  line-height:1.08;
+  letter-spacing:-0.02em;
+  color:#fff;
+}
+
+.hero .sub{
+  margin:0 0 18px;
+  font-size:18px;
+}
+
+.hero-cta{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:18px 0 10px;
+}
+
+.hero .micro{
+  margin:10px 0 0;
+  font-size:14px;
+  color:rgba(255,255,255,.82);
+}
+
+/* Botões */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 16px;
+  border-radius:999px;
+  font-weight:700;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  transition:transform .12s ease, background .12s ease, border-color .12s ease;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.34);
+}
+
+.btn.primary{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#1b120f;
+}
+
+.btn.primary:hover{
+  background:#ffb04a;
+  border-color:#ffb04a;
+}
+
+.btn.ghost{
+  background:rgba(255,255,255,.06);
+}
+
+/* Crédito da imagem */
+.hero-credit{
   margin:0;
+  align-self:flex-end;
+}
+
+.hero-credit figcaption{
+  font-size:12px;
+  color:rgba(255,255,255,.78);
+  background:rgba(0,0,0,.25);
+  border:1px solid rgba(255,255,255,.14);
+  padding:8px 10px;
+  border-radius:999px;
+}
+
+/* CARDS */
+.quick{
+  padding:56px 0;
+  background:var(--bg);
+}
+
+.section-title{
+  margin:0 0 18px;
+  font-size:18px;
+  color:var(--brand);
+  letter-spacing:.01em;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:14px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px;
+  text-decoration:none;
+  color:inherit;
+  box-shadow:0 8px 24px rgba(0,0,0,.05);
+  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+
+.card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(242,154,46,.5);
+  box-shadow:0 12px 28px rgba(0,0,0,.08);
+}
+
+.card h3{
+  margin:0 0 8px;
+  color:var(--brand);
   font-size:16px;
-  color:#ffffff;
-  opacity:.95;
+}
+
+.card p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.45;
+  max-width:none;
 }
 
 /* ==================================================
@@ -186,7 +313,7 @@ p{
 /* todo texto do footer no MESMO tamanho */
 .footer p,
 .footer small{
-  font-size:14px;     /* tamanho único */
+  font-size:14px;
   line-height:1.6;
   margin:0 0 10px;
   color:var(--muted);
@@ -194,13 +321,13 @@ p{
 
 /* frase institucional em negrito, sem mudar fonte */
 .footer-highlight{
-  font-weight:600;    /* negrito */
+  font-weight:600;
   color:var(--text);
 }
 
 /* mídias sociais: mesma fonte, só em negrito */
 .footer-social p{
-  font-weight:600;    /* negrito */
+  font-weight:600;
   color:var(--text);
 }
 
@@ -215,30 +342,24 @@ p{
   text-decoration:underline;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width:640px){
-  h1{
-    font-size:32px;
-  }
-
-  h2,
-  h3{
-    font-size:18px;
-  }
-
-  p{
-    font-size:16px;
-  }
-
-  .hero{
-    padding:72px 0;
-  }
-
-  .home .convite{
-    padding:72px 0;
-  }
-
-  .site-logo{
-    height:38px;
-  }
+/* ===== MOBILE / RESPONSIVO ===== */
+@media (max-width:900px){
+  .hero-inner{ min-height:46vh; }
+  .hero h1{ font-size:36px; }
+  .grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
 }
+
+@media (max-width:640px){
+  h1{ font-size:32px; }
+  h2,h3{ font-size:18px; }
+  p{ font-size:16px; }
+
+  .site-logo{ height:38px; }
+
+  .hero{ padding:64px 0; }
+  .hero-inner{ align-items:flex-start; }
+  .hero h1{ font-size:30px; }
+  .grid{ grid-template-columns:1fr; }
+  .hero-credit figcaption{ border-radius:14px; }
+}
+
