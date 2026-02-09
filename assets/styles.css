@@ -4,28 +4,20 @@
 
   --bg:#ffffff;
   --text:#111111;
-  --muted:#4b4b4b;
+  --muted:#4b4b4b;     /* cinza mais “presente” */
   --line:#e7e7e7;
   --card:#fafafa;
 
   --max:1100px;
   --radius:18px;
 
-  /* NOVO NAV */
-  --nav-bg:#e3ded8;      /* fundo */
-  --nav-text:#360929;    /* texto/menu */
-  --nav-hover:#f1ece6;   /* hover suave */
-  --nav-pill:#360929;    /* item ativo (pílula) */
+  --nav-bg:#f6f6f6;
 
   /* Tipografia base */
-  --fs-title:40px;
-  --fs-body:16px;
-  --fs-title-page:32px;
-  --fs-h2:18px;
-
-  /* NOVO: tamanhos do menu */
-  --fs-nav:17px;         /* menu desktop */
-  --fs-nav-mobile:16px;  /* menu mobile */
+  --fs-title:40px;     /* título (HOME) */
+  --fs-body:16px;      /* texto */
+  --fs-title-page:32px;/* título (PÁGINAS) */
+  --fs-h2:18px;        /* subtítulos */
 }
 
 *{ box-sizing:border-box; }
@@ -52,7 +44,7 @@ img{ max-width:100%; height:auto; display:block; }
 }
 
 /* ==================================================
-   NAV (MAIOR + COM PRESENÇA)
+   NAV
    ================================================== */
 
 .nav{
@@ -60,25 +52,25 @@ img{ max-width:100%; height:auto; display:block; }
   top:0;
   z-index:10;
   background:var(--nav-bg);
-  border-bottom:1px solid rgba(54, 9, 41, 0.18);
+  border-bottom:1px solid var(--line);
 }
 
 .nav-inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:18px 0;          /* mais alto */
-  gap:18px;
+  padding:12px 0;
+  gap:16px;
 }
 
-/* Logo maior */
+/* Só o logo (clicável) */
 .brand-logo{
   display:flex;
   align-items:center;
 }
 
 .site-logo{
-  height:62px;             /* maior */
+  height:52px;
   width:auto;
   display:block;
 }
@@ -86,33 +78,29 @@ img{ max-width:100%; height:auto; display:block; }
 /* Menu */
 .menu{
   display:flex;
-  gap:18px;                /* mais espaçamento */
+  gap:14px;
   overflow-x:auto;
   white-space:nowrap;
   -webkit-overflow-scrolling:touch;
-  padding:6px 0;
 }
 
 .menu a{
-  font-size:var(--fs-nav); /* maior */
-  color:var(--nav-text);   /* cor do menu */
-  padding:10px 14px;
+  font-size:14px;
+  color:var(--muted);
+  padding:8px 10px;
   border-radius:999px;
   font-family:"Open Sans", sans-serif;
-  font-weight:700;         /* mais forte */
-  letter-spacing:.3px;
-  transition:background .15s ease, transform .15s ease, opacity .15s ease;
+  font-weight:600;
 }
 
 .menu a:hover{
-  background:var(--nav-hover);
-  transform:translateY(-1px);
+  color:var(--text);
+  background:#ededed;
 }
 
-/* Página ativa: vira “botão” */
 .menu a[aria-current="page"]{
-  background:var(--nav-pill);
-  color:#fff;
+  color:var(--text);
+  background:#eaeaea;
 }
 
 /* ==================================================
@@ -126,6 +114,7 @@ h1,h2,h3{
   margin:0;
 }
 
+/* H1 padrão (HOME) */
 h1{
   font-size:var(--fs-title);
   font-weight:800;
@@ -133,6 +122,7 @@ h1{
   margin:0 0 10px;
 }
 
+/* H1 das páginas internas (Instituto/Território/etc.) */
 .page-hero h1{
   font-size:var(--fs-title-page);
   font-weight:800;
@@ -140,6 +130,7 @@ h1{
   margin:0 0 14px;
 }
 
+/* H2 padrão: maior que corpo e com respiro */
 h2{
   font-size:var(--fs-h2);
   font-weight:700;
@@ -171,11 +162,16 @@ strong{ color:var(--text); }
   border-top:1px solid var(--line);
 }
 
-ul{ margin:0; padding-left:18px; }
+/* listas padrão */
+ul{
+  margin:0;
+  padding-left:18px;
+}
+
 li{ margin:0 0 8px; }
 
 /* ==================================================
-   HERO HOME
+   HERO HOME (claro, imagem em card)
    ================================================== */
 
 .hero.hero-light{
@@ -191,6 +187,7 @@ li{ margin:0 0 8px; }
   align-items:center;
 }
 
+/* opcional */
 .kicker{
   margin:0 0 10px;
   font-size:12px;
@@ -203,6 +200,7 @@ li{ margin:0 0 8px; }
 .hero-copy .sub{ margin:0 0 14px; }
 .hero-copy .micro{ margin-top:12px; font-size:15px; }
 
+/* Botões */
 .hero-cta,
 .actions{
   display:flex;
@@ -242,6 +240,7 @@ li{ margin:0 0 8px; }
   border-color:#ffb04a;
 }
 
+/* Foto em card (HOME) */
 .hero-media{
   margin:0;
   background:#fff;
@@ -268,7 +267,8 @@ li{ margin:0 0 8px; }
 }
 
 /* ==================================================
-   PAGE HERO
+   MINI HERO — PÁGINAS INTERNAS (SPLIT)
+   (imagem em card + caption igual home)
    ================================================== */
 
 .page-hero.split{
@@ -290,6 +290,7 @@ li{ margin:0 0 8px; }
   max-width:680px;
 }
 
+/* Card da imagem interna */
 .page-hero-media{
   margin:0;
   background:#fff;
@@ -358,7 +359,7 @@ li{ margin:0 0 8px; }
 }
 
 /* ==================================================
-   LISTAS PDF
+   LISTAS de PDF (Conteúdos/Agenda)
    ================================================== */
 
 .pdf-list{
@@ -448,18 +449,12 @@ li{ margin:0 0 8px; }
 
   .page-hero-grid{ grid-template-columns:1fr; }
   .page-hero-media img{ height:280px; }
-
-  .site-logo{ height:54px; }
-  .menu a{ font-size:var(--fs-nav-mobile); padding:9px 12px; }
 }
 
 @media (max-width:640px){
-  :root{ --fs-title:32px; --fs-body:15px; --fs-title-page:26px; --fs-h2:17px; }
-
-  .site-logo{ height:50px; }
-  .menu{ gap:12px; }
-  .menu a{ font-size:15px; padding:9px 12px; }
-
+  :root{ --fs-title:32px; --fs-body:15px; }
+  .site-logo{ height:46px; }
   .grid{ grid-template-columns:1fr; }
-}
 
+  :root{ --fs-title-page:26px; --fs-h2:17px; }
+}
