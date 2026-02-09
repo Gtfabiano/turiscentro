@@ -3,27 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Instituto — TurisCentro do Brasil</title>
+  <title>Agenda — TurisCentro do Brasil</title>
+
+  <!-- Fontes (somente 2) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body id="topo">
 
 <header class="nav">
   <div class="container nav-inner">
 
-    <!-- sem link (como você quer) -->
-    <div class="brand">
-  <img class="site-logo" src="images/logo1.png" alt="Instituto TurisCentro do Brasil">
-  <a href="../index.html#topo">Instituto TurisCentro do Brasil</a>
-</div>
+    <!-- Logo clicável -->
+    <a class="brand brand-logo" href="../index.html#topo" aria-label="Voltar para a página inicial">
+      <img class="site-logo" src="images/logo1.png" alt="Instituto TurisCentro do Brasil">
+    </a>
 
     <nav class="menu" aria-label="Menu principal">
-      <a href="instituto.html" aria-current="page">Instituto</a>
+      <a href="instituto.html">Instituto</a>
       <a href="territorio.html">Território</a>
       <a href="acoes.html">Ações</a>
-      <a href="agenda.html">Agenda</a>
+      <a href="agenda.html" aria-current="page">Agenda</a>
       <a href="conteudos.html">Conteúdos</a>
       <a href="participe.html">Participe</a>
     </nav>
@@ -31,81 +35,75 @@
   </div>
 </header>
 
-  <!-- MAIN -->
-  <main class="container">
+<main class="container">
 
-    <!-- HERO -->
-    <section class="hero">
-      <h1>Agenda — Acontece no Centro</h1>
-      <p>
-        A Agenda do TurisCentro funciona como um jornal do território:
-        registra acontecimentos, ações, encontros e movimentações do centro urbano.
-        Após edição, cada material fica disponível em PDF para consulta e memória.
-      </p>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Agenda — Acontece no Centro</h1>
+    <p>
+      A Agenda do TurisCentro funciona como um jornal do território:
+      registra acontecimentos, ações, encontros e movimentações do centro urbano.
+      Após edição, cada material fica disponível em PDF para consulta e memória.
+    </p>
+  </section>
 
-    <!-- TEXTO PRINCIPAL -->
-    <section class="section">
-      <p>
-        Mais do que divulgar datas, a Agenda busca contextualizar o que acontece
-        no centro da cidade. Cada registro é pensado para permanecer acessível,
-        mesmo após o encerramento de um evento ou ação, contribuindo para a
-        documentação contínua da vida urbana.
-      </p>
+  <!-- TEXTO PRINCIPAL -->
+  <section class="section">
+    <p>
+      Mais do que divulgar datas, a Agenda busca contextualizar o que acontece
+      no centro da cidade. Cada registro é pensado para permanecer acessível,
+      mesmo após o encerramento de um evento ou ação, contribuindo para a
+      documentação contínua da vida urbana.
+    </p>
 
-      <p>
-        Os conteúdos podem incluir ações culturais, ativações temporárias,
-        caminhadas urbanas, encontros, iniciativas locais e notícias relevantes
-        do território. A organização é feita por edições, em formato de jornal,
-        permitindo leitura rápida e consulta posterior.
-      </p>
-    </section>
+    <p>
+      Os conteúdos podem incluir ações culturais, ativações temporárias,
+      caminhadas urbanas, encontros, iniciativas locais e notícias relevantes
+      do território. A organização é feita por edições, em formato de jornal,
+      permitindo leitura rápida e consulta posterior.
+    </p>
+  </section>
 
-    <!-- EDIÇÕES EM PDF -->
-    <section class="section">
-      <h2>Edições em PDF</h2>
-      <p>
-        Aqui ficam as edições finalizadas do <strong>Acontece no Centro</strong>.
-        Conforme novas edições forem publicadas, basta adicionar o PDF nesta lista.
-      </p>
+  <!-- EDIÇÕES EM PDF -->
+  <section class="section">
+    <h2>Edições em PDF</h2>
+    <p>
+      Aqui ficam as edições finalizadas do <strong>Acontece no Centro</strong>.
+      Conforme novas edições forem publicadas, basta adicionar o PDF nesta lista.
+    </p>
 
-      <ul class="pdf-list">
-        <li>
-          <a href="../assets/pdf/agenda/acontece-no-centro-ed01.pdf" target="_blank" rel="noopener noreferrer">
-            Acontece no Centro — Edição 01 (PDF)
-          </a>
-        </li>
-      </ul>
-    </section>
+    <ul class="pdf-list">
+      <li>
+        <a href="pdf/agenda/acontece-no-centro-ed01.pdf" target="_blank" rel="noopener noreferrer">
+          Acontece no Centro — Edição 01 (PDF)
+        </a>
+      </li>
+    </ul>
+  </section>
 
-    <!-- REGISTROS / NOTAS -->
-    <section class="section">
-      <h2>Registros do território</h2>
-      <p>
-        Além das edições em PDF, a Agenda também pode reunir notas curtas
-        e registros de campo — como observações, mudanças percebidas no território,
-        atualizações de equipamentos culturais, movimentações urbanas e iniciativas
-        em andamento.
-      </p>
+  <!-- REGISTROS -->
+  <section class="section">
+    <h2>Registros do território</h2>
+    <p>
+      Além das edições em PDF, a Agenda também pode reunir notas curtas
+      e registros de campo — como observações, mudanças percebidas no território,
+      atualizações de equipamentos culturais, movimentações urbanas e iniciativas
+      em andamento.
+    </p>
 
-      <p>
-        A proposta é manter uma memória ativa do centro: o que muda, o que permanece,
-        o que surge e o que merece atenção. Esse conjunto de registros fortalece
-        a leitura coletiva da cidade e apoia futuras ações do Instituto.
-      </p>
-    </section>
+    <p>
+      A proposta é manter uma memória ativa do centro: o que muda, o que permanece,
+      o que surge e o que merece atenção. Esse conjunto de registros fortalece
+      a leitura coletiva da cidade e apoia futuras ações do Instituto.
+    </p>
+  </section>
 
-    <!-- VOLTAR -->
-    <div class="actions">
-      <a class="btn" href="../index.html">← Voltar ao site</a>
-    </div>
+</main>
 
-  </main>
-
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
 
-    <p class="footer-text footer-highlight">
+    <p class="footer-highlight">
       O Instituto TurisCentro do Brasil mantém canais abertos para diálogo,
       parcerias e trocas.
     </p>
@@ -119,11 +117,12 @@
       </p>
     </div>
 
-    <small>Instituto TurisCentro do Brasil</small><br>
-    <small>© Todos os direitos reservados.</small>
+    <small class="footer-meta">Instituto TurisCentro do Brasil</small><br>
+    <small class="footer-meta">© Todos os direitos reservados.</small>
 
   </div>
 </footer>
 
 </body>
 </html>
+
