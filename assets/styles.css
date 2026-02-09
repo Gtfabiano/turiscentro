@@ -20,7 +20,7 @@ html,body{ margin:0; padding:0; }
 html{ scroll-behavior:smooth; }
 
 body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:"Open Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
   line-height:1.7;
@@ -63,8 +63,9 @@ small{ color:var(--muted); }
   letter-spacing:.2px;
 }
 
+/* logo maior */
 .site-logo{
-  height:42px;
+  height:54px;
   width:auto;
   display:block;
 }
@@ -92,9 +93,13 @@ small{ color:var(--muted); }
    TIPOGRAFIA (hierarquia suave)
    ================================================== */
 
+h1, h2, h3{
+  font-family:"Nunito","Open Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+
 h1{
   font-size:40px;
-  font-weight:650;
+  font-weight:750; /* Nunito fica melhor assim */
   line-height:1.12;
   letter-spacing:-0.02em;
   margin:0 0 10px;
@@ -103,7 +108,7 @@ h1{
 
 h2, h3{
   font-size:16px;
-  font-weight:700;
+  font-weight:800;
   line-height:1.4;
   margin:0 0 8px;
   color:var(--brand);
@@ -243,7 +248,7 @@ p{
 
 .page-hero h1{
   font-size:28px;
-  font-weight:700;
+  font-weight:800;
   margin:0;
   color:var(--brand);
 }
@@ -333,7 +338,7 @@ p{
 }
 
 /* ==================================================
-   FOOTER
+   FOOTER (cinza escuro + preto, mesma fonte)
    ================================================== */
 
 .footer{
@@ -341,7 +346,6 @@ p{
   padding:48px 0;
   margin-top:56px;
   background:var(--bg);
-  color:var(--muted);
 }
 
 .footer p,
@@ -349,20 +353,26 @@ p{
   font-size:14px;
   line-height:1.6;
   margin:0 0 10px;
-  color:var(--muted);
+  color:#333; /* cinza escuro */
 }
 
 .footer-highlight{
   font-weight:700;
-  color:var(--text);
+  color:#111; /* preto */
 }
 
 .footer-social p{
   font-weight:700;
-  color:var(--text);
+  color:#111; /* preto */
+}
+
+.footer-social a{
+  color:#333;
+  font-weight:700;
 }
 
 .footer-social a:hover{
+  color:#111;
   text-decoration:underline;
 }
 
@@ -378,7 +388,7 @@ p{
 }
 
 @media (max-width:640px){
-  .site-logo{ height:38px; }
+  .site-logo{ height:44px; } /* logo maior no desktop, confortável no mobile */
   h1{ font-size:32px; }
   p{ font-size:15px; }
   .grid{ grid-template-columns:1fr; }
